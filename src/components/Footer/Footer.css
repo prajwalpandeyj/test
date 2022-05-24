@@ -1,0 +1,28 @@
+.footer {
+    background-color:#aaaaaa;
+
+    ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+  }
+  .names {
+    font-size: 20px;
+    padding: 20px 30px 15px;
+    color: black;
+  }
+  
+  a {
+    color: black;
+  }
+  
+  .footContainer {
+    width: 60%;
+    height: 50px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
