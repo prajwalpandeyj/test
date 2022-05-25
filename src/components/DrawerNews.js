@@ -68,7 +68,7 @@ export default function SwipeableTemporaryDrawer( {setCategory} ) {
       <Divider />
       <List>
         {categories.map((text, index) => (
-          <ListItem style={{height:40, borderRadius:3}} button key={text} onClick={()=>setCategory(text)}>
+          <ListItem style={{height:40, borderRadius:3}} button key={text} onClick={()=>setCategory("india_english_"+text)}>
             <ListItemText primary={text} />
           </ListItem>
         ))}

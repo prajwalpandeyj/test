@@ -8,25 +8,27 @@ import apikey from './data/config';
 import Footer from './components/Footer/Footer';
 
 function App() {
-  const [category, setCategory] = useState("general");
+  const [category, setCategory] = useState("india_english");
   const [newsArray, setnewsArray] = useState([]);
   const [newsResults, setnewsResults] = useState();;
   const [loadmore, setLoadmore] = useState(20)
   const newsApi=async() =>{
     try{
-      const proxyUrl="https://cors-anywhere.herokuapp.com/";
-      const url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&category=${category}`
+      // const proxyUrl="https://cors-anywhere.herokuapp.com/";
+      // const a="india_english_"
+      const url=`https://newsapi.in/newsapi/news.php?key=${apikey}&category=${category}&content_type=full_content`
       const news = await axios.get( url );
-      setnewsArray(news.data.articles);
-      setnewsResults(news.data.totalResults);
+      // console.log(news)
+      setnewsArray(news.data.News);
+      setnewsResults(news.data.success);
     }catch(error){
         console.log(error)
     }
   };
-  console.log(newsArray);
+   console.log(newsArray);
   useEffect(() => {
     newsApi()
-  }, [newsResults,category])
+  }, [newsResults,category]);
   return (
     <div className="App">
       <NavNews setCategory={setCategory}/>
